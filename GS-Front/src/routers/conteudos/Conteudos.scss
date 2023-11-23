@@ -1,0 +1,140 @@
+$background: #d9d9d9;
+$padrao-color: #00a093;
+$padrao-color-hover:#00a09387; 
+
+$color: #515151;
+
+$back-home:#d9d9d9c5;
+
+@mixin flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dependencias,
+#depressao, 
+#ansiedade {
+    @include flexCenter();
+    flex-direction: column;
+
+    .introducao{
+        @include flexCenter();
+        flex-direction: column;
+
+        margin-top: 70px;
+        margin-bottom: 40px;
+    }
+
+    .introducao h1{
+        position: absolute;
+        margin-top: -70px;
+    }
+    .introducao h1::before{
+        position: absolute;
+        content:'' ;
+        width: 75px;
+        background-color: $padrao-color-hover;
+        height: 3px;
+        bottom: 4px;
+        right: 6px;
+        border-radius: 5px;  
+    }
+
+    .introducao h2{
+        color: $color;
+        font-size: 18px
+    }
+
+    #cards img{
+        width: 150px;
+        height: 150px;
+
+        border-radius: 10px;
+        margin: 20px;
+    }
+
+    .categorias{
+        @include flexCenter();
+        width: 700px;
+        height: 250px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $padrao-color
+    }
+
+    .inside-cat{
+        @include flexCenter();
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .inside-cat h1{
+        margin-bottom: 10px;
+    }
+
+    .inside-cat .botao{
+        text-decoration: none;
+
+        width: 100%;
+        border: none;
+
+        padding: 5px ;
+        border-radius: 10px;
+
+        background-color: $padrao-color;
+        color: #fff;
+
+        font-weight: bold;
+        cursor: pointer;
+
+        transition: all ease-in-out .5s;
+        margin-top: 20px;
+    }
+    .inside-cat .botao:hover{
+        background-color: $padrao-color-hover;
+        transform: scale(0.9);
+    }
+}
+
+
+
+
+@media screen and (max-width: 500px){
+    #dependencias .introducao h2,
+    #depressao .introducao h2,
+    #ansiedade .introducao h2{
+        font-size: 12px;
+        margin-top: 30px;
+        text-align: center;
+    }
+    #dependencias #cards img,
+    #depressao #cards img,
+    #ansiedade #cards img{
+        width: 70px;
+        height: 70px;
+        margin: 10px;
+    }
+    #dependencias .categorias,
+    #depressao .categorias,
+    #ansiedade .categorias{
+        width: 100%;
+    }
+    #dependencias .inside-cat h1,
+    #depressao .inside-cat h1,
+    #ansiedade .inside-cat h1{
+        font-size: 16px;
+    }
+    #dependencias .inside-cat p,
+    #depressao .inside-cat p,
+    #ansiedade .inside-cat p{
+        font-size: 11px;
+        font-weight: 700;
+    }
+    #dependencias .inside-cat .botao,
+    #depressao .inside-cat .botao,
+    #ansiedade .inside-cat .botao{
+        font-size: 12px;
+        padding: 3px;
+        width: 90%;
+    }
+}

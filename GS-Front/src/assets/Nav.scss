@@ -1,0 +1,202 @@
+$background-blue: #eaeaea;
+
+$background: #d9d9d9;
+$padrao-color: #00a093;
+$padrao-color-hover:#00a09387; 
+
+$color: #515151;
+
+$back-home:#d9d9d9c5;
+
+@mixin flexCenter(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.dark-mode,
+.dark-mode #conteudo {
+    animation: dark-mode 0.4s ease-in-out;
+    background-color: #312f33;
+    color: #ffffff;
+}
+
+.dark-mode #sobreNos #all-sobre,
+.dark-mode #oq-e #all-oq,
+.dark-mode #nav,
+.dark-mode #nav button,
+.dark-mode #footer a button {
+    animation: dark-mode 0.4s ease-in-out;
+    background-color: #323132;
+}
+
+.dark-mode #home #principal #container{
+    animation: dark-mode 0.4s ease-in-out;
+    background-color: #323132cd;
+}
+
+.dark-mode h1, 
+.dark-mode h3,
+.dark-mode .p3,
+.dark-mode #cartoes .h1-name,
+.dark-mode #login h1 {
+    animation: dark-mode 0.4s ease-in-out;
+    color: #fff;
+}
+
+.dark-mode #cartoes .h3-sub,
+.dark-mode #sobreNos #intro-sobre h2,
+.dark-mode #login h2,
+.dark-mode #login input,
+.dark-mode #nav a,
+.dark-mode #nav i,
+.dark-mode #home #principal #container p,
+.dark-mode #dependencias .introducao h2,
+.dark-mode #depressao .introducao h2,
+.dark-mode #ansiedade .introducao h2,
+.dark-mode #botao-logout{
+    animation: dark-mode 0.4s ease-in-out;
+    color: #b3b3b3;
+}
+
+
+#user-logado{
+    font-size: 20px;
+    margin-left: 40%;
+    margin-top: 5px;
+
+    @include flexCenter();
+    position: absolute;
+}
+#user-logado::before{
+    position: absolute;
+    content:'' ;
+    width: 90px;
+    background-color: $padrao-color;
+    height: 3px;
+    bottom: 4px;
+    right: 100px;
+    border-radius: 5px;
+}
+
+#botao-logout{
+    cursor: pointer;
+    font-size: 16px;
+
+    border-radius: 10px;
+
+    padding: 3px;
+    margin: 0 10px;
+
+    width: 80px;
+    transition: all ease-in-out .2s;
+}
+#botao-logout:hover{
+    font-weight: bold;
+}
+
+
+
+#nav{
+    animation: dark-mode 0.4s ease-in-out;
+
+    @include flexCenter();
+    justify-content: space-between;
+
+    background-color: $background-blue;
+    height: 80px;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    img{
+        margin-left: 100px;
+        width: 100px;
+        height: 70px;
+    }
+
+    #links{
+        @include flexCenter();
+    }
+
+    .link{
+        color: #000000;
+        text-decoration: none;
+        margin: 0px 10px;
+        transition: all .4s;
+        font-size: 18px;
+    }
+    .link:hover{
+        color: #00a093;
+    }
+    #links:last-child{
+        margin-right: 100px;
+    }
+
+    button{
+        border: none;
+    }
+    .mode-icon{
+        border: none;
+        background-color: transparent;
+    
+        margin-left: 50px;
+        cursor: pointer;
+    
+        font-size: 14px;
+        color: $color;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    #nav{
+        height: 40px;
+    }
+    #nav img{
+        display: none;
+    }
+    #nav .link{
+        font-size: 14px;
+        margin: 0 4px;
+    }
+    #nav #links:last-child{
+        margin-right: 0px;
+    }
+    #nav .mode-icon{
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+
+    #user-logado{
+        font-size: 16px;
+        margin: 0 auto;
+
+        margin-top: 5px;
+        position: relative;
+    }
+    #user-logado::before{
+        width: 80px;
+        height: 2px;
+        bottom: 3px;
+    }
+
+    #botao-logout{
+        cursor: pointer;
+        font-size: 14px;
+    
+        padding: 3px;
+        margin: 0 5px;
+    
+        width: 70px;
+    }
+    
+}
+
+
+
+
+
+

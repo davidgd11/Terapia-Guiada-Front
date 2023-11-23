@@ -1,0 +1,255 @@
+$background: #d9d9d9;
+$padrao-color: #00a093;
+$padrao-color-hover:#00a09387; 
+
+$color: #515151;
+
+$back-home:#d9d9d9c5;
+
+@mixin flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#acesso{
+    h1{
+        @include flexCenter();
+        font-size: 30px;
+
+        margin-top: 30px;
+    }
+    section{
+        border-bottom: 1px solid $padrao-color;
+    }
+    #atividades{
+        h1{
+            margin-top: 50px;
+            margin-bottom: 20px
+        }
+        .div1{
+            @include flexCenter();
+            height: 340px;
+            
+            border-top: 1px dotted $padrao-color;
+        }
+        .div1 div{
+            width: 700px;
+        }
+        h3{
+            margin: 5px 0;
+        }
+        p{
+            margin: 0 40px;
+            text-align: justify;
+        }
+        video{
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px black;
+        }
+    }
+
+    #meditacao{
+        @include flexCenter();
+        flex-direction: column;
+        height: 600px;
+        background-color: $back-home;
+        h1{
+            margin-top: -30px;
+            margin-bottom: 50px
+        }
+        #conteudo-med{
+            @include flexCenter();
+        }
+        #intro-med{
+            width: 50%;
+            background-color: $background;
+
+            padding: 30px;
+            margin: 0 40px;
+
+            border-radius: 10px;
+            border: 1px solid $color;
+
+            height: 230px;
+            width: 500px;
+
+            @include flexCenter();
+            flex-direction: column;
+        }
+        h2{
+            @include flexCenter();
+        }
+        p{
+            text-align: justify;
+        }
+        video{
+            margin: 0 10px;
+            border-radius: 10px;
+
+            box-shadow: 2px 2px 10px black
+        }
+    }
+
+    #dicas{
+        @include flexCenter();
+        height: 400px;
+        div{
+            @include flexCenter();
+            flex-direction: column;
+        }
+        h1{
+            font-size: 22px;
+            margin: 30px 5px;
+        }
+        p{
+            margin: 0 20px;
+        }
+        i{
+            font-size: 25px;
+            margin: 0 50px;
+        }
+    }
+
+    #grupo{
+        height: 600px;
+        @include flexCenter();
+        flex-direction: column;
+        h2{
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px
+        }
+        p{
+            @include flexCenter();
+            width: 600px;
+            text-align: justify;
+        }
+        #motivo-grupo{
+            @include flexCenter();
+        }
+        #motivo-grupo img{
+            @include flexCenter();
+            margin: 90px 0px 0 50px;
+
+            border: 1px solid $color;
+            border-radius: 10px;
+
+            width: 280px;
+            height: 200px;
+        }
+        #institutos{
+            @include flexCenter();
+        }
+        #institutos i{
+            margin-right: 10px;
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 500px){
+    #acesso{
+        h1{
+            text-align: center;
+            font-size: 20px ;
+        }
+        #meditacao,
+        #dicas,
+        #grupo{
+            height: 500px;
+            p{
+                font-size: 12px;
+                margin: 3px 7px;
+                text-align: justify;
+            }
+        }
+
+        #atividades{
+            h1{
+                font-size: 16px;
+            }
+            h2{
+                font-size: 14px;
+                text-align: center;
+            }
+            h3{
+                text-align: center;
+                font-size: 12px;
+            }
+            p{
+                font-size: 12px;
+                margin: 3px 7px;
+                text-align: justify;
+            }
+            video{
+                width: 50%;
+                height: 120px;
+                margin: 40px 5px;
+            }
+        }
+
+        #meditacao{
+            height: 800px;
+            h1{
+                margin-bottom: 20px ;
+            }
+            #conteudo-med{
+                flex-direction: column;
+            }
+            #intro-med{
+                border: none;
+                width: fit-content;
+                padding: 0;
+                margin: 0;
+                h2{
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+                p{
+                    text-align: justify;
+                    padding: 0 20px;
+                }
+            }
+            video{
+                text-align: center;
+                width: 90%;
+                height: 200px;
+                margin: 40px 5px;
+            }
+        }
+        
+        #dicas{
+            flex-direction: column;
+            height: 800px;
+            h1{
+                font-size: 16px;
+            }
+            p{
+                text-align: justify;
+                padding: 0 20px;
+            }
+            i{
+                display: none;
+            }
+        }
+
+        #grupo{
+            height: 700px;
+            h2{
+                font-size: 14px;
+                padding: 0 50px;
+            }
+            p{
+                width: 90%;
+                text-align: center;
+            }
+            #motivo-grupo img{
+                display: none;
+            }
+        }
+    }
+}

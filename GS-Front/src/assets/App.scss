@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Poppins:wght@200&display=swap');
+
+$background: #d9d9d9;
+$padrao-color: #00a093;
+$padrao-color-hover:#00a09387; 
+
+$color: #515151;
+
+$back-home:#d9d9d9c5;
+
+@mixin flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; 
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+    width: 6px;
+}
+body::-webkit-scrollbar-track {
+    overflow-x: hidden;
+    background-color: $background;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: $padrao-color;
+    border-radius: 50px;
+}
+
+#home{
+    #principal{
+            background-image: url("./imgs/farm2.jpg");
+            background-size: cover;
+
+            width: 99%;
+
+            margin: 8px;
+
+            height: 100vh;
+
+            @include flexCenter();
+            flex-direction: column;
+        #container{
+            @include flexCenter();
+            flex-direction: column;
+
+            background-color: $back-home;
+            color: $color;
+            border-radius: 10px;
+
+            height: 200px;
+            width: 90%;
+
+            padding: 20px;
+            line-height: 1.2;
+        }
+        #h1-principal{
+            font-size: 66px ;
+            color: $padrao-color ;
+        }
+        p{
+            font-weight: bolder;
+        }
+    }
+}
+
+
+
+//PARTE CONTEUDO
+#conteudo{
+    background-color: #fff;
+    height: 100vh;
+}
+
+.h1-princip{
+    @include flexCenter();
+    font-size: 40px;
+    margin-top: 60px;
+    color: $color;
+}
+
+#cartoes{
+    @include flexCenter();
+    .cartao{
+        margin:  100px 10px 100px 15px;
+        border-right: 1px solid rgb(0, 0, 0, 0.2) ;
+        border-bottom:  1px solid rgb(0, 0, 0, 0.2) ;
+        box-shadow: 0px 2px 4px rgb(0, 0, 0, 0.6);
+        border-radius: 15px;
+        width: 340px;
+        height: 370px;
+    }
+    .cartao .inside-cartao{
+        margin: 10px 0px 0px 10px;
+    }
+    .h1-name{
+        font-size: 30px;
+        text-align: center;
+        margin: 20px 0;
+        color: $color;
+    }
+    .h3-sub{
+        font-weight: 400;
+        text-align: center;
+        color: $color;
+    }
+    #parag{
+        margin-top: 30px;
+        color: #000000ba;
+        font-size: 14px;
+    }
+    .p3{
+        margin: 4px;
+    }
+    div button{
+        border-radius: 8px;
+        background-color:  $padrao-color; 
+        color: white;
+        width: 97%;
+        height: 40px;
+        font-weight: 800 ;
+        border: none;
+        transition: all ease-in-out 0.5s;
+        margin-top: 30px;
+    }
+    div button:hover{
+        background-color: $padrao-color-hover; 
+        cursor: pointer;
+        transform: scale(0.9);
+    }
+    div .p3 i{
+        color:  $padrao-color;
+    }
+}
+
+
+
+//PARTE SOBRE NÓS
+
+#sobreNos{
+    @include flexCenter();
+    box-shadow: 0px 1px 10px black;
+    height: 80vh;
+    text-align: center;
+    #intro-sobre{
+        @include flexCenter();
+        flex-direction: column;
+        width: 50%;
+        text-align: center;
+    }
+    h1{
+        margin-bottom: 15px;
+    }
+    h2{
+        margin: 15px;
+        font-size: 18px;
+    }
+    #all-sobre{
+        @include flexCenter();
+        height: 100%;
+        width: 50%;
+
+        background-color: $background;
+
+        text-align: justify;
+        padding: 0 20px;
+    }
+    #all-sobre p{
+        margin: 15px;
+    }
+}
+
+
+//PARTE O QUE É
+#oq-e{
+    margin-top: 100px;
+    @include flexCenter();
+    box-shadow: 0px 1px 10px black;
+    height: 80vh;
+    text-align: center;
+    #intro-oq{
+        @include flexCenter();
+        flex-direction: column;
+        width: 50%;
+        text-align: center;
+    }
+    h1{
+        margin-bottom: 15px;
+    }
+    h2{
+        margin: 15px;
+        font-size: 18px;
+    }
+    #all-oq{
+        @include flexCenter();
+        height: 100%;
+        width: 50%;
+
+        background-color: $background;
+
+        text-align: justify;
+        padding: 0 20px;
+    }
+    #all-oq p{
+        margin: 15px;
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width: 500px) {
+    #home{
+        width: 100%;
+    }
+    #home #principal #container{
+        height: 160px;
+        margin: 0 10px;
+    }
+    #home #principal #container #h1-principal{
+        font-size: 50px;
+    }
+    #home #principal #container p{
+        font-size: 12px;
+    }
+
+
+
+    #conteudo .h1-princip{
+        margin-top: 50px;
+        text-align: center;
+        font-size: 30px
+    }
+    #cartoes{
+        @include flexCenter();
+        flex-direction: column;
+    }
+    #cartoes .cartao{
+        margin: 20px 10px;
+        height: 280px;
+        width: fit-content;
+    }
+    #cartoes .cartao:first-child{
+        margin-top: 50px;
+    }
+    #cartoes .h1-name{
+        font-size: 20px
+    }
+    #cartoes .h3-sub{
+        font-size: 16px
+    }
+    #cartoes #parag{
+        display: flex;
+        text-align: center;
+        margin: 30px 10px 0;
+        font-size: 10px
+    }
+    #cartoes div button{
+        font-size: 12px;
+        height: 30px
+    }
+
+
+
+    #sobreNos,
+    #oq-e{
+        @include flexCenter();
+        flex-direction: column;
+
+        margin: 500px 20px 0;
+    }
+    #sobreNos #intro-sobre,
+    #oq-e #intro-oq{
+        width: 100%;
+        margin: 0 20px;
+    }
+    #sobreNos h1,
+    #oq-e h1{
+        margin-top: 30px;
+        font-size: 30px;
+    }
+    #sobreNos h2,
+    #oq-e h2{
+        font-size: 12px;
+    }
+    #sobreNos #all-sobre,
+    #oq-e #all-oq{
+        width: 100%;
+        margin: 0 5px;
+    }
+    #sobreNos #all-sobre p,
+    #oq-e #all-oq p{
+        font-size: 12px;
+    }
+}
